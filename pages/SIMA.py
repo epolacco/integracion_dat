@@ -13,7 +13,7 @@ st.write("La opción elegida es: ", estacion)
 
 # Bloque 1: Arrastrar archivo y leerlo
 # Cargar el archivo Excel
-archivo_excel = st.file_uploader("Arrastra el archivo aquí", type=["xlsx", "xls"])
+archivo_excel = st.file_uploader("Arrastra el archivo acá", type=["xlsx", "xls"])
 
 if archivo_excel is not None:
     progress_bar = st.progress(0)
