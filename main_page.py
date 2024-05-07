@@ -1,6 +1,5 @@
 import streamlit as st
 
-st.sidebar("INICIO")
 st.markdown("# Integración a DAT")
 st.subheader("Bienvenido a DAT CREA - Procesamiento de datos")
 st.write("Acá podrás incorporar los datos de tu aplicación al *formato DAT* :sunglasses:")
