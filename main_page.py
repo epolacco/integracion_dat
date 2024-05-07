@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.title("Página principal")
 st.markdown("# Integración a DAT")
 st.subheader("Bienvenido a DAT CREA - Procesamiento de datos")
 st.write("Aquí podrás incorporar los datos de tu aplicación al *formato DAT* :sunglasses:")
