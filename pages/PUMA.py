@@ -13,7 +13,7 @@ st.write("La opción elegida es: ", estacion)
 
 # Bloque 1: Arrastrar archivo y leerlo
 # Cargar el archivo Excel
-archivo_excel = st.file_uploader("Arrastra el archivo aquí", type=["xlsx", "xls"])
+archivo_excel = st.file_uploader("Arrastra el archivo acá", type=["xlsx", "xls"])
 
 if archivo_excel is not None:
     progress_bar = st.progress(0)
@@ -38,18 +38,19 @@ if archivo_excel is not None:
             import shutil
             import pyautogui
 
-            puma = pd.read_excel(archivo_excel, sheet_name = 'El Hinojo')
-            puma['CUIC'] = 'LIS334003M'
+            puma = pd.read_excel(archivo_excel, sheet_name = 2)
+            #puma['CUIC'] = 'LIS334003M'
             # Copia del df original
             df = puma.copy()
             # Eliminar - de latitud y longitud
             df['CENTROIDE-LATITUD'] = df['CENTROIDE-LATITUD'].str.lstrip('-')
             df['CENTROIDE-LONGITUD'] = df['CENTROIDE-LONGITUD'].str.lstrip('-')
             
-            cols = ['CUIC','CAMPO','vacio','COLUMNA_I','LOTE','vacio','vacio','CENTROIDE-LATITUD','CENTROIDE-LONGITUD','PROVINCIA','DEPARTAMENTO','vacio','LOCALIDAD','CALIDAD DE AMBIENTE','SUPERFICIE DEL SISTEMA','TENENCIA','DESTINO DE LA PRODUCCION','vacio','CULTIVO','vacio','SUB GRUPO','vacio','ANTECESOR','vacio','FECHA SIEMBRA','TIPO DE LABRANZA','vacio','SISTEMAS DE SIEMBRA','DIST. E/SURCOS (CM)','vacio','vacio','vacio','POBLACION LOG (PL/M2)','vacio','vacio','SEMILLERO','GENETICA','vacio','TIPO DE FERTILIZACION','FERTILIZ I PRODUCTO','FERTILIZ I DOSIS KG/HA','FERTILIZ I MOMENTO','FERTILIZ I FORMA','FERTILIZ II PRODUCTO','FERTILIZ II DOSIS KG/HA','FERTILIZ II MOMENTO','FERTILIZ II FORMA','FERTILIZ III PRODUCTO','FERTILIZ III DOSIS KG/HA','FERTILIZ III MOMENTO','FERTILIZ III FORMA','FERTILIZ IV PRODUCTO','FERTILIZ IV DOSIS KG/HA','FERTILIZ IV MOMENTO','FERTILIZ IV FORMA','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','RIEGO','LAMINA (MM)','NAPA','vacio','vacio','ADVERSIDAD I','ADVERSIDAD I % DAÑO','ADVERSIDAD II','ADVERSIDAD II % DAÑO','vacio','SUPERFICIE COSECHADA (HA)','FECHA DE COSECHA','RDTO EN GRANO (KG/HA)','RDTO EN SILO (KGMV/HA PICADA)','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','SISTEMATIZACION','TIPO DE SUELO','vacio','vacio','vacio','RESIEMBRA','RESIEMBRA CAUSAS','CURASEMILLA / INOCULADO','vacio','vacio','vacio','2023 Mes 1','2023 Mes 2', '2023 Mes 3', '2023 Mes 4', '2023 Mes 5', '2023 Mes 6', '2023 Mes 7', '2023 Mes 8', '2023 Mes 9', '2023 Mes 10', '2023 Mes 11', '2023 Mes 12','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','PH (TON/HA)','vacio','vacio','vacio','vacio','P PPM','S-SO4 (PPM)','N-NO3 0-20 (PPM)','N-NO3 20-40 (PPM)','N-NO3 40-60 (PPM) ESTIMADO','OTRO NUTRIENTE','vacio','vacio','vacio','vacio','vacio','vacio','MALEZA DIFIC DE CONTROL','MALEZA ESPECIE PRINCIPAL','MALEZA ESPECIE SECUNDARIA','MALEZA ESPECIE TERCIARIA','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','OBSERVACIONES',]
+            cols = ['CUIC','CAMPO','vacio','COLUMNA_I','LOTE','vacio','vacio','CENTROIDE-LATITUD','CENTROIDE-LONGITUD','PROVINCIA','DEPARTAMENTO','vacio','LOCALIDAD','CALIDAD DE AMBIENTE','SUPERFICIE DEL SISTEMA','TENENCIA','DESTINO DE LA PRODUCCION','vacio','CULTIVO','vacio','SUB GRUPO','vacio','ANTECESOR','vacio','FECHA SIEMBRA','TIPO DE LABRANZA','vacio','SISTEMAS DE SIEMBRA','DIST. E/SURCOS (CM)','vacio','vacio','vacio','POBLACION LOG (PL/M2)','vacio','vacio','SEMILLERO','GENETICA','VERSION BIOTECNOLOGICA','TIPO DE FERTILIZACION','FERTILIZ I PRODUCTO','FERTILIZ I DOSIS KG/HA','FERTILIZ I MOMENTO','FERTILIZ I FORMA','FERTILIZ II PRODUCTO','FERTILIZ II DOSIS KG/HA','FERTILIZ II MOMENTO','FERTILIZ II FORMA','FERTILIZ III PRODUCTO','FERTILIZ III DOSIS KG/HA','FERTILIZ III MOMENTO','FERTILIZ III FORMA','FERTILIZ IV PRODUCTO','FERTILIZ IV DOSIS KG/HA','FERTILIZ IV MOMENTO','FERTILIZ IV FORMA','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','RIEGO','LAMINA (MM)','NAPA','vacio','vacio','ADVERSIDAD I','ADVERSIDAD I % DAÑO','ADVERSIDAD II','ADVERSIDAD II % DAÑO','vacio','SUPERFICIE COSECHADA (HA)','FECHA DE COSECHA','RDTO EN GRANO (KG/HA)','RDTO EN SILO (KGMV/HA PICADA)','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','SISTEMATIZACION','TIPO DE SUELO','vacio','vacio','vacio','RESIEMBRA','RESIEMBRA CAUSAS','CURASEMILLA / INOCULADO','vacio','vacio','vacio','2023 Mes 1','2023 Mes 2', '2023 Mes 3', '2023 Mes 4', '2023 Mes 5', '2023 Mes 6', '2023 Mes 7', '2023 Mes 8', '2023 Mes 9', '2023 Mes 10', '2023 Mes 11', '2023 Mes 12','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','PH (TON/HA)','vacio','vacio','vacio','vacio','P PPM','S-SO4 (PPM)','N-NO3 0-20 (PPM)','N-NO3 20-40 (PPM)','N-NO3 40-60 (PPM) ESTIMADO','OTRO NUTRIENTE','vacio','vacio','vacio','vacio','vacio','vacio','MALEZA DIFIC DE CONTROL','MALEZA ESPECIE PRINCIPAL','MALEZA ESPECIE SECUNDARIA','MALEZA ESPECIE TERCIARIA','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','vacio','OBSERVACIONES',]
             df = df.reindex(columns = cols)
             #df['COLUMNA_I'] = df['CUIC'].apply(lambda x: x[:3])
-            df['COLUMNA_I'] = df['CUIC'].apply(lambda x: x[:3] if isinstance(x, str) else np.nan)
+            
+            df['COLUMNA_I'] = df['CUIC'].apply(lambda x: x[:3] if isinstance(x, str) else '' if pd.isnull(x) else x)
 
             
             df['CAMPO'] = df['CAMPO'].replace(['Don Cristobal',
@@ -32421,6 +32422,29 @@ if archivo_excel is not None:
             
             df['SEMILLERO'] = ['' if x not in semillero else x for x in df['SEMILLERO']]
             
+            biotecnologia_dict = {
+                'Maíz': ['CLVT3P', 'CLVIP3', 'GL STACK', 'HCLMG', 
+                        'HCLMGRR2', 'HCLRR', 'MG', 'MGRR2', 'PW', 
+                        'PW Enlist', 'PW ULTRA', 'PW Ultra Enlist', 
+                        'RR', 'TD/TG', 'TDmax', 'TRECEPTERA', 'TGplus', 
+                        'VIPTERA', 'VIPTERA 2', 'VIPTERA 3', 'VIPTERA 4', 
+                        'VT3P', 'VT3P / RIB', 'VT4P', 'VYHR', 'YHR', 
+                        'Refugio (sin proteína insecticida)', 'Otro'],
+                'Girasol': ['CL', 'CL PLUS', 'CLHO', 'CP', 'Sin Evento']
+                }
+
+            def validar_biotecnologia(row):
+                valor_cultivo = row['CULTIVO']
+                valor_subgrupo = row['VERSION BIOTECNOLOGICA']
+
+                if valor_cultivo in biotecnologia_dict:
+                    if valor_subgrupo in biotecnologia_dict[valor_cultivo]:
+                        return valor_subgrupo
+                return ''
+
+            df['VERSION BIOTECNOLOGICA'] = df.apply(validar_biotecnologia, axis=1)
+
+
             fertilizacion = ['Sin Fertilización',
             'Con Fertilización fija',
             'Con Fertilización variable']

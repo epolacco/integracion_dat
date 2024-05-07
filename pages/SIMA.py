@@ -41,7 +41,7 @@ if archivo_excel is not None:
             # 1) Lectura del archivo de SIMA
             
             
-            sima = pd.read_excel(archivo)
+            sima = pd.read_excel(archivo_excel)
             
             # Copia del df original
             df = sima.copy()
