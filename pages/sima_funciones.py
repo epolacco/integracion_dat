@@ -1946,11 +1946,11 @@ def validar_antecesores(df,conn):
 
 
 # Ejecutar la consulta SQL y cargar los resultados en un DataFrame
-version_biotecno_query = """SELECT cultivo, nombre FROM datcrea_tablas.version_biotecnologica WHERE cultivo IS NOT NULL"""
-version_biotecno = pd.read_sql(version_biotecno_query, con=conn)
+#version_biotecno_query = """SELECT cultivo, nombre FROM datcrea_tablas.version_biotecnologica WHERE cultivo IS NOT NULL"""
+#version_biotecno = pd.read_sql(version_biotecno_query, con=conn)
 
 # Crear un diccionario para almacenar los resultados
-version_biotecno_dict = {}
+#version_biotecno_dict = {}
 
 # VALIDAR BIOTECNOLOGÍA
 #for index, row in version_biotecno.iterrows():
