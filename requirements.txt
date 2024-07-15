@@ -1,0 +1,4 @@
+mysql==8.2.0
+openpy==3.1.2
+streamlit==1.33.0
+sqlalchemy==2.0.23
